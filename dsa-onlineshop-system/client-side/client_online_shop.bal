@@ -1,9 +1,14 @@
 import ballerina/http;
 import ballerina/io;
 
+// Create an HTTP client to interact with the shopping API.
+
 http:Client shoppingClient = check new ("http://localhost:9090/api");
 
 public function main() returns error? {
+
+// Infinite loop to keep the menu running until the user chooses to exit.
+
     while true {
         printMenu();
         string choice = io:readln("Enter your choice from the below list: ");
